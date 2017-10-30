@@ -1,0 +1,723 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Магазин картин тюменского художника">
+        <meta property="og:title" content="Картины в Тюмени - Ниджат Абыев">
+        <meta property="og:description" content="Сайт картинной галереи художника Тюмени Ниджата Абыева">
+        <meta property="og:url" content="http://www.nidjat.ru">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:image" content="{{ art.12.image.url }}">
+
+        <!-- SEO -->
+        <meta name="yandex-verification" content="5bd1c1ca1c0efd8c" />
+        <meta name="google-site-verification" content="vLGf5971YQl-Br3-e3ZOwc2D2qmFHb2_bBDN21XS2v0" />
+
+        <meta name="description" content="Сайт картинной галереи художника Тюмени Ниджата Абыева. Вы можете купить картины для интерьера, создаю картины на заказ, а также открытки, постеры модульные картины маслом на холсте.">
+        <meta name="keywords" content="картины тюмень, картины маслом, картины на холсте, купить картину тюмень">
+
+        <!-- Заголовок страницы -->
+        <title>Картины Тюмень - Картины маслом на холсте - Ниджат Абыев</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:200" rel="stylesheet">
+        <link href="{% static 'lightbox/src/css/lightbox.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'OwlCarousel/dist/assets/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'OwlCarousel/dist/assets/owl.theme.default.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <script src="https://use.fontawesome.com/c093ff5e02.js"></script>
+    </head>
+    <body>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <a data-toggle="modal" data-target="#callback-order" id="phone-call"><i class="fa fa-phone"></i></a>
+        <div class="container">
+            <div class="row" style="height: 100vh">
+                <div class="col-md-12 text-center my-auto">
+                    <h6 class="text-uppercase mb-5 wow fadeIn" data-wow-duration="2s" data-wow-delay="4s">Nidjat Abiev</h6>
+                    <img src="{% static 'img/logo.png' %}" class="mt-5 mb-5 w-25 wow rotateIn" data-wow-duration="3s" data-wow-delay="2s">
+                    <ul class="list-inline mt-5 w-100 wow fadeIn" data-wow-duration="2s" data-wow-delay="4s">
+                        <li class="list-inline-item mx-auto text-uppercase w-25"><a href="#art">Картины</a></li>
+                        <li class="list-inline-item mx-auto text-uppercase w-25"><a href="#nidjat">Художник</a></li>
+                        <li class="list-inline-item mx-auto text-uppercase w-25"><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <article class="center refs text-center">
+            <div class="row row-art" id="art">
+                <section class="refcontainer half" style="background-image: url({{ art.0.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.0.size }}" data-cost="{{ art.0.cost }}" data-img="{{ art.0.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.0.name }}"</p>
+                        <p>{{ art.0.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.0.size }}</p>
+                        <p>{{ art.0.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.0.size }}" data-cost="{{ art.0.cost }}" data-img="{{ art.0.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.0.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.1.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.1.size }}" data-cost="{{ art.1.cost }}" data-img="{{ art.1.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.1.name }}"</p>
+                        <p>{{ art.1.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.1.size }}</p>
+                        <p>{{ art.1.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.1.size }}" data-cost="{{ art.1.cost }}" data-img="{{ art.1.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.1.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.2.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.2.size }}" data-cost="{{ art.2.cost }}" data-img="{{ art.2.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.2.name }}"</p>
+                        <p>{{ art.2.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.2.size }}</p>
+                        <p>{{ art.2.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.2.size }}" data-cost="{{ art.2.cost }}" data-img="{{ art.2.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.2.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.3.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.3.size }}" data-cost="{{ art.3.cost }}" data-img="{{ art.3.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.3.name }}"</p>
+                        <p>{{ art.3.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.3.size }}</p>
+                        <p>{{ art.3.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.3.size }}" data-cost="{{ art.3.cost }}" data-img="{{ art.3.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.3.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer full" style="background-image: url({{ art.4.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.4.size }}" data-cost="{{ art.4.cost }}" data-img="{{ art.4.image.url }}">
+                    <div class="overlay overlayfull text-uppercase" style="display: block;">
+                        <p>"{{ art.4.name }}"</p>
+                        <p>{{ art.4.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.4.size }}</p>
+                        <p>{{ art.4.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.4.size }}" data-cost="{{ art.4.cost }}" data-img="{{ art.4.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.4.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="display:block; min-height:250px; width:100%; padding-bottom:1px; float:left;">
+                    <section class="refcontainer huge" style="background-image: url({{ art.5.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.5.size }}" data-cost="{{ art.5.cost }}" data-img="{{ art.5.image.url }}">
+                        <div class="overlay overlayhuge text-uppercase" style="display: block;">
+                            <p>"{{ art.5.name }}"</p>
+                            <p>{{ art.5.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.5.size }}</p>
+                            <p>{{ art.5.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.5.size }}" data-cost="{{ art.5.cost }}" data-img="{{ art.5.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.5.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="refcontainer small-size" style="background-image: url({{ art.6.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.6.size }}" data-cost="{{ art.6.cost }}" data-img="{{ art.6.image.url }}">
+                        <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                            <p>"{{ art.6.name }}"</p>
+                            <p>{{ art.6.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.6.size }}</p>
+                            <p>{{ art.6.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.6.size }}" data-cost="{{ art.6.cost }}" data-img="{{ art.6.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.6.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="refcontainer small-size" style="background-image: url({{ art.7.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.7.size }}" data-cost="{{ art.7.cost }}" data-img="{{ art.7.image.url }}">
+                        <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                            <p>"{{ art.7.name }}"</p>
+                            <p>{{ art.7.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.7.size }}</p>
+                            <p>{{ art.7.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.7.size }}" data-cost="{{ art.7.cost }}" data-img="{{ art.7.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.7.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div style="display:block; min-height:50px; width:100%; padding-bottom:1px; float:left;">
+                    <section class="refcontainer medium" style="background-image: url({{ art.8.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.8.size }}" data-cost="{{ art.8.cost }}" data-img="{{ art.8.image.url }}">
+                        <div class="overlay overlaymedium text-uppercase" style="display: block;">
+                            <p>"{{ art.8.name }}"</p>
+                            <p>{{ art.8.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.8.size }}</p>
+                            <p>{{ art.8.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.8.size }}" data-cost="{{ art.8.cost }}" data-img="{{ art.8.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.8.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="refcontainer small-size" style="background-image: url({{ art.9.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.9.size }}" data-cost="{{ art.9.cost }}" data-img="{{ art.9.image.url }}">
+                        <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                            <p>"{{ art.9.name }}"</p>
+                            <p>{{ art.9.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.9.size }}</p>
+                            <p>{{ art.9.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.9.size }}" data-cost="{{ art.9.cost }}" data-img="{{ art.9.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.9.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="refcontainer half" style="background-image: url({{ art.10.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.10.size }}" data-cost="{{ art.10.cost }}" data-img="{{ art.10.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.10.name }}"</p>
+                        <p>{{ art.10.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.10.size }}</p>
+                        <p>{{ art.10.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.10.size }}" data-cost="{{ art.10.cost }}" data-img="{{ art.10.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.10.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.11.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.11.size }}" data-cost="{{ art.11.cost }}" data-img="{{ art.11.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.11.name }}"</p>
+                        <p>{{ art.11.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.11.size }}</p>
+                        <p>{{ art.11.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.11.size }}" data-cost="{{ art.11.cost }}" data-img="{{ art.11.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.11.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.12.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.12.size }}" data-cost="{{ art.12.cost }}" data-img="{{ art.12.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.12.name }}"</p>
+                        <p>{{ art.12.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.12.size }}</p>
+                        <p>{{ art.12.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.12.size }}" data-cost="{{ art.12.cost }}" data-img="{{ art.12.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.12.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.13.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.13.size }}" data-cost="{{ art.13.cost }}" data-img="{{ art.13.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.13.name }}"</p>
+                        <p>{{ art.13.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.13.size }}</p>
+                        <p>{{ art.13.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.13.size }}" data-cost="{{ art.13.cost }}" data-img="{{ art.13.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.13.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.14.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.14.size }}" data-cost="{{ art.14.cost }}" data-img="{{ art.14.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.14.name }}"</p>
+                        <p>{{ art.14.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.14.size }}</p>
+                        <p>{{ art.14.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.14.size }}" data-cost="{{ art.14.cost }}" data-img="{{ art.14.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.14.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.15.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.15.size }}" data-cost="{{ art.15.cost }}" data-img="{{ art.15.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.15.name }}"</p>
+                        <p>{{ art.15.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.15.size }}</p>
+                        <p>{{ art.15.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.15.size }}" data-cost="{{ art.15.cost }}" data-img="{{ art.15.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.15.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer full" style="background-image: url({{ art.16.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.16.size }}" data-cost="{{ art.16.cost }}" data-img="{{ art.16.image.url }}">
+                    <div class="overlay overlayfull text-uppercase" style="display: block;">
+                        <p>"{{ art.16.name }}"</p>
+                        <p>{{ art.16.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.16.size }}</p>
+                        <p>{{ art.16.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.16.size }}" data-cost="{{ art.16.cost }}" data-img="{{ art.16.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.16.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="display:block; min-height:250px; width:100%; padding-bottom:1px; float:left;">
+                    <section class="refcontainer huge" style="background-image: url({{ art.17.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.17.size }}" data-cost="{{ art.17.cost }}" data-img="{{ art.17.image.url }}">
+                        <div class="overlay overlayhuge text-uppercase" style="display: block;">
+                            <p>"{{ art.17.name }}"</p>
+                            <p>{{ art.17.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.17.size }}</p>
+                            <p>{{ art.17.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.17.size }}" data-cost="{{ art.17.cost }}" data-img="{{ art.17.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.17.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="refcontainer small-size" style="background-image: url({{ art.18.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.18.size }}" data-cost="{{ art.18.cost }}" data-img="{{ art.18.image.url }}">
+                        <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                            <p>"{{ art.18.name }}"</p>
+                            <p>{{ art.18.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.18.size }}</p>
+                            <p>{{ art.18.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.18.size }}" data-cost="{{ art.18.cost }}" data-img="{{ art.18.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.18.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="refcontainer small-size" style="background-image: url({{ art.19.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.19.size }}" data-cost="{{ art.19.cost }}" data-img="{{ art.19.image.url }}">
+                        <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                            <p>"{{ art.19.name }}"</p>
+                            <p>{{ art.19.year }}</p>
+                            <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                            <p>{{ art.19.size }}</p>
+                            <p>{{ art.19.description }}</p>
+                            <div class="container">
+                                <a data-toggle="modal" data-target="#callback" data-size="{{ art.19.size }}" data-cost="{{ art.19.cost }}" data-img="{{ art.19.image.url }}" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ art.19.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="refcontainer half" style="background-image: url({{ art.20.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.20.size }}" data-cost="{{ art.20.cost }}" data-img="{{ art.20.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.20.name }}"</p>
+                        <p>{{ art.20.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.20.size }}</p>
+                        <p>{{ art.20.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.20.size }}" data-cost="{{ art.20.cost }}" data-img="{{ art.20.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.20.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="refcontainer half" style="background-image: url({{ art.21.image.url }})" data-toggle="modal" data-target="#callback" data-size="{{ art.21.size }}" data-cost="{{ art.21.cost }}" data-img="{{ art.21.image.url }}">
+                    <div class="overlay overlaysmall text-uppercase" style="display: block;">
+                        <p>"{{ art.21.name }}"</p>
+                        <p>{{ art.21.year }}</p>
+                        <img src="{% static 'img/logo-white.png' %}" class="logo w-10 mx-auto mt-5 mb-5">
+                        <p>{{ art.21.size }}</p>
+                        <p>{{ art.21.description }}</p>
+                        <div class="container">
+                            <a data-toggle="modal" data-target="#callback" data-size="{{ art.21.size }}" data-cost="{{ art.21.cost }}" data-img="{{ art.21.image.url }}" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ art.21.image.url }}" data-lightbox="art" class="btn btn-primary">Увеличить</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+
+        <div class="container" id="nidjat">
+            <h1>Картины в Тюмени</h1>
+            <p>Сегодня современные художники Тюмени могут показать свои работы не только в картинной галерее, но и в интернете. Меня зовут Ниджат Абыев, на этом сайте представлены мои произведения. Это дает возможность рассказать о своем творчестве как о предмете искусства современности, и я рад тому, что могу поделиться частью своего видения с Вами.</p>
+            <p>В коллекции Вы можете найти картины маслом, картины природы, картины с использованием сусального золота, показанные на сайте картинной галереи. Я пишу картины на холсте. Если Вам понравились мои работы, есть возможность их приобрести.</p>
+            <p>Для многих (я не исключение) важен тот момент, чтобы картины для интерьера были одновременно оригинальными и современными. Приобретая такой продукт, нужно обращать внимание на качество использованных материалов. Каждую картину я пишу на натуральном холсте, прорабатывая все детали, чтобы она могла радовать Вас долгие годы. Смогу создать картины для интерьера или модульные картины на заказ, а также воплотить любые Ваши идеи.</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                    <div class="vk_widget">
+                        <script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
+                        <!-- VK Widget -->
+                        <div id="vk_widget" style="border-style: none">
+                            <div id="vk_groups"></div>
+                        </div>
+                        <script>
+                            function VK_Widget_Init(){
+                                document.getElementById('vk_groups').innerHTML = "";
+                                var vk_width = document.getElementById('vk_widget').clientWidth;
+                                VK.Widgets.Group("vk_groups", {mode: 4, width: vk_width, height: vk_width}, 85494076);
+                            };
+                            window.addEventListener('load', VK_Widget_Init, false);
+                            window.addEventListener('resize', VK_Widget_Init, false);
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <div class="insta-widget">
+                        <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+                        <iframe src="//lightwidget.com/widgets/1b565cfd74ed533d961c2d85a30999dc.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center mt-5 mb-5">
+            <a role="button" class="btn btn-danger btn-lg text-uppercase" data-toggle="modal" data-target="#order">Картины на заказ</a>
+
+            <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Заказать картину в Тюмени</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 my-auto">
+                                    <p>Картинная галерея, представленная на сайте, постоянно обновляется. Если вы хотите следить за обновлениями, подпишитесь на мои социальные сети, ссылки оставлены в разделе контактов. Чтобы совершить покупку на сайте, нужно просто выбрать товар и оформить заказ. Если Вам хочется сделать уникальное полотно и заказать постер для интерьера, плакат или картину, достаточно связаться со мной.</p>
+                                    <p>Так же вы можете приобрести:</p>
+                                    <table style="opacity: 0.7" class="table table-hover table-inverse">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Наименование</th>
+                                                <th class="text-center">Стоимость</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><p>Открытки</p></td>
+                                                <td><p>200 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>Набор наклеек</p></td>
+                                                <td><p>250 &#8381;</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>Плакаты и постеры в рамке:</p>
+                                    <table style="opacity: 0.7" class="table table-hover table-inverse">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Наименование</th>
+                                                <th class="text-center">Стоимость</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><p>A1</p></td>
+                                                <td><p>3000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>A2</p></td>
+                                                <td><p>2000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>A3</p></td>
+                                                <td><p>1000 &#8381;</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Срок выполнения заказа от 7 до 15 дней</p>
+                                    <table style="opacity: 0.7" class="table table-hover table-inverse">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Размер</th>
+                                                <th class="text-center">Стоимость</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><p>30х40</p></td>
+                                                <td><p>5000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>40х60</p></td>
+                                                <td><p>7000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>50х70</p></td>
+                                                <td><p>10000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>60х80</p></td>
+                                                <td><p>13000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>75х110</p></td>
+                                                <td><p>15000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>100х100</p></td>
+                                                <td><p>18000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>100х120</p></td>
+                                                <td><p>21000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>130х170</p></td>
+                                                <td><p>30000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>A3</p></td>
+                                                <td><p>1000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>A2</p></td>
+                                                <td><p>2000 &#8381;</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>A1</p></td>
+                                                <td><p>3000 &#8381;</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <button data-toggle="modal" data-dismiss="modal" data-target="#callback-order" type="button" class="btn btn-danger">Заказать звонок</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="contacts">
+            <p class="text-center">Если у Вас возникли вопросы, можете связаться со мной. Все контакты размещены на сайте. Купить картину можно в Тюмени. Также организована продажа через художественную галерею на этом сайте, осуществляется доставка в любую точку мира. Наличие полотна указано на фото.</p>
+            <div class="row">
+                <div style="border-right: solid 1px #000000" class="col-6 mb-5 text-center">
+                    <a class="navbar-brand" href="tel:89698077888">
+                        <i class="fa fa-phone-square d-block"></i>
+                        +7 (969) 807-78-88
+                    </a>
+                </div>
+                <div class="col-6 mb-5 text-center">
+                    <a class="navbar-brand" href="mailto:PRINC72REGIONA@GMAIL.COM">
+                        <i class="fa fa-envelope d-block"></i>
+                        PRINC72REGIONA@GMAIL.COM
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mb-3">
+            <hr class="w-100">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <p> &copy; 2017 | VZ COMPANY - Веб-студия</p>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="navbar-brand" href="tel:89698077888">
+                            <i class="fa fa-phone-square"></i>
+                        </a>
+                        <a class="navbar-brand" href="mailto:PRINC72REGIONA@GMAIL.COM">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a class="navbar-brand" href="http://vk.com/23nidjat">
+                            <i class="fa fa-vk"></i>
+                        </a>
+                        <a class="navbar-brand" href="https://instagram.com/23nidjat">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Форма обратной связи</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Возможно изготовление любого другого размера, стоимость расчитывается индивидуально.</p>
+                        <p>В стоимость картины входит рамка.</p>
+                        <p>В комплекте оригинала картины вы получите:<br>- фирменный постер в рамке<br>- три открытки на выбор<br>- упаковка наклеек</p>
+                        <div class="text-center">
+                            <a href="" data-lightbox="art-modal" class="btn btn-danger painting-img mb-3">Увеличить картину</a>
+                        </div>
+                        <table style="opacity: 0.7" class="table table-hover table-inverse">
+                          <thead>
+                            <tr>
+                                <th>Тип</th>
+                                <th class="text-center">Размеры</th>
+                                <th class="text-center">Стоимость</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td>Оригинал картины</td>
+                                <td class="text-center painting-size">130 х 170 cm</td>
+                                <td class="text-center painting-cost">40000 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Открытки</td>
+                                <td class="text-center">10 х 15 cm</td>
+                                <td class="text-center">200 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Постер (А3)</td>
+                                <td class="text-center">28 х 45 cm</td>
+                                <td class="text-center">1000 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Постер (А2)</td>
+                                <td class="text-center">40 х 63 cm</td>
+                                <td class="text-center">2000 ₽</td>
+                            </tr>
+			    <tr>
+                                <td>Постер (А1)</td>
+                                <td class="text-center">40 х 63 cm</td>
+                                <td class="text-center">3000 ₽</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <form id="callback_form" name="callback_form" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="inputName">Имя:</label>
+                                <input name="name" type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPhone">Телефон:</label>
+                                <input name="phone" type="tel" class="form-control" id="inputPhone" placeholder="Номер телефона в любом формате">
+                            </div>
+                            <div class="text-center">
+                                <a class="navbar-brand" href="tel:89698077888">
+                                    <i class="fa fa-phone-square"></i>
+                                </a>
+                                <a class="navbar-brand" href="mailto:PRINC72REGIONA@GMAIL.COM">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a class="navbar-brand" href="http://vk.com/23nidjat">
+                                    <i class="fa fa-vk"></i>
+                                </a>
+                                <a class="navbar-brand" href="https://instagram.com/23nidjat">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button form="callback_form" type="submit" class="btn btn-danger">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="callback-order" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Форма обратной связи</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Помимо картин, я делаю открытки, постеры и многие другие интересные полотна по индивидуальному заказу. Цена договорная, зависит от размера работы и ее объема.</p>
+                        <form id="callback_form_order" name="callback_form_order" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="inputName">Имя:</label>
+                                <input name="name" type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPhone">Телефон:</label>
+                                <input name="phone" type="tel" class="form-control" id="inputPhone" placeholder="Номер телефона в любом формате">
+                            </div>
+                            <div class="text-center">
+                                <a class="navbar-brand" href="tel:89698077888">
+                                    <i class="fa fa-phone-square"></i>
+                                </a>
+                                <a class="navbar-brand" href="mailto:PRINC72REGIONA@GMAIL.COM">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a class="navbar-brand" href="http://vk.com/23nidjat">
+                                    <i class="fa fa-vk"></i>
+                                </a>
+                                <a class="navbar-brand" href="https://instagram.com/23nidjat">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button class="btn btn-danger" form="callback_form_order" type="submit">Заказать звонок</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="{% static 'OwlCarousel/dist/owl.carousel.js' %}"></script>
+        <script src="{% static 'lightbox/src/js/lightbox.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

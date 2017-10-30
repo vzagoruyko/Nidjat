@@ -1,0 +1,7 @@
+Host: http://nidjat.ru
+
+User-agent: *
+Disallow: /admin
+Disallow: /media
+Disallow: /static
+Sitemap: http://nidjat.ru/sitemap.xml
